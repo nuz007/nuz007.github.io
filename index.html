@@ -5,15 +5,67 @@
 <body>
 <h1>黑客000的个人网站</h1>
 <h1>8bd8.github.io</h1>
-<iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=57&py=beijing" style="border: solid 1px #7ec8ea" width="450" height="450" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+<iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=57&py=beijing" width="450" height="450" frameborder="0" marginwidth="0"></iframe>
 <div class="topbar">
-<a href="resources.html">资源</a>
-<a href="apps.html">应用</a>
-<a href="snake.html">贪吃蛇</a>
-<a href="idcard.html">姓名身份证生成器</a>
-<a href="https://8bd8.github.io/idphoto">在线身份证照片生成器</a>
-<a href="simplemario.html">超级玛丽</a>
-<a href="virus">彩蛋</a>
+<a href="resources.html">资源</a><br/>
+<a href="apps.html">应用</a><br/>
+<a href="snake.html">贪吃蛇</a><br/>
+<a href="idcard.html">姓名身份证生成器</a><br/>
+<a href="https://8bd8.github.io/idphoto">在线身份证照片生成器</a><br/>
+<a href="simplemario.html">超级玛丽</a><br/>
+<a href="virus">彩蛋</a><br/>
+<audio autoplay="autoplay" loop="loop" preload="auto" src="http://music.163.com/song/media/outer/url?id=1811921555.mp3"></audio>
+<div> 
+<h1>
+<div class="text" style=" text-align:center;">
+<img class="wp-smiley" src="https://cdn.jsdelivr.net/gh/xiaonuo2/blog-img/denglong.gif" alt="灯笼" title="灯笼" />元旦倒计时<img class="wp-smiley" src="https://cdn.jsdelivr.net/gh/xiaonuo2/blog-img/denglong.gif" alt="灯笼" title="灯笼" />
+</div></h1> 
+<h3 id="title-1">
+<div class="text" style=" text-align:center;">
+<img class="wp-smiley" src="https://cdn.jsdelivr.net/gh/xiaonuo2/blog-img/meigui.png" alt="玫瑰" title="玫瑰" />
+</div></h3> 
+<h3 id="title-2">
+<div class="text" style=" text-align:center;">
+<img class="wp-smiley" src="https://cdn.jsdelivr.net/gh/xiaonuo2/blog-img/taiyang.png" alt="太阳" title="太阳" />
+<span id="xxxxxxxxx">距离2023年元旦还有</span>
+<img class="wp-smiley" src="https://cdn.jsdelivr.net/gh/xiaonuo2/blog-img/89.png" alt="网站春节倒计时代码分享" />
+</div></h3> 
+<div>
+<h1>
+<div class="text" style=" text-align:center;"> 
+<span id="t_d"></span> 
+<span id="t_h"></span> 
+<span id="t_m"></span> 
+<span id="t_s"></span> 
+</div>
+<div class="text" style=" text-align:center;"> 
+<span id="t_d2"></span> 
+<span id="t_h2"></span> 
+<span id="t_m2"></span> 
+<span id="t_s2"></span> 
+</div>
+        
+</h1>
+<script type="text/javascript">
+function getRTime(){
+var EndTime= new Date('2023/1/1 00:00:00'); //截止时间
+var NowTime = new Date();
+var t =EndTime.getTime() - NowTime.getTime();
+var d=Math.floor(t/1000/60/60/24);
+var h=Math.floor(t/1000/60/60%24);
+var m=Math.floor(t/1000/60%60);
+var s=Math.floor(t/1000%60);document.getElementById("t_d").innerHTML = d + " 天";
+document.getElementById("t_h").innerHTML = h + " 时";
+document.getElementById("t_m").innerHTML = m + " 分";
+document.getElementById("t_s").innerHTML = s + " 秒";
+}
+
+setInterval(getRTime,1000);
+</script>
+</div>
+</div>
+
+
 </div>
 </body>
 </html>

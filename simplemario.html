@@ -14,7 +14,18 @@
   background: rgb(52, 166, 251);
   table-layout: fixed;
   border-spacing: 0;
+  
 }
+canvas{animation: loadb 120s linear infinite;}
+
+@keyframes loadb{
+    0%{transform: rotate3d(1,1,1,-10deg);width: 80%;}
+    25%{transform: rotate3d(1,1,1,0deg);width: 60%;}
+    50%{transform: rotate3d(1,1,1,10deg);width: 80%;}
+    75%{transform: rotate3d(1,1,1,0deg);width: 60%;}
+    100%{transform: rotate3d(1,1,1,-10deg);width: 80%;}
+}
+
 .background td { padding: 0; }
 .lava { background: rgb(255, 100, 100); }
 .wall { background: white; }
@@ -91,7 +102,7 @@ var simpleLevelPlan = [
 ];
 
 var GAME_LEVELS = [
-  ["                      ",
+["                      ",
   "                      ",
   "  x                x  ",
   "  x     v   o o  | x  ",
@@ -100,6 +111,34 @@ var GAME_LEVELS = [
   "      x!!!!!!!!!!!!x  ",
   "      xxxxxxxxxxxxxx  ",
   "                      "],
+  ["   v v       v        ",
+  "                    x ",
+  "  x          |    x   ",
+  "  x     vv=xo o  |x   ",
+  "  x @     =xxxxx  x   ",
+  "  xxxxx            x  ",
+  "      x             x ",
+  "      xxxxxxxxxxxxxx  ",
+  "                      "],  
+  ["  vv v       v        ",
+  "  x                 x ",
+  "  x          |    x   ",
+  "  x      v=xo o  |x   ",
+  "  x @     =xxxxx  x   ",
+  "  x                x  ",
+  "      x             x ",
+  "      xxx  xxxxxxxxx  ",
+  "    x                 "],  
+  ["     v      v v       ",
+  "                    x ",
+  "xxx               x   ",
+  "        v = o o |x   ",
+  "    @     =xx xx  x   ",
+  "  xxxxx            x  ",
+  "      x             x ",
+  "      xxxxxxx xxxxxx  ",
+  "             x        "],  
+
   ["              v         v            v     |                               v    ",
    "                                                                                ",
    "                                                                                ",
