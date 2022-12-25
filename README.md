@@ -2,7 +2,7 @@
 一个分享各类资源（50%原创+50%搜集）的网站
 资源定期更新，Star，watch，fork 越高更新频率越高
 
-
+![GitHub Repo stars](https://img.shields.io/github/stars/8bd8/8bd8.github.io?style=flat-square)
 ## 作者不易，求助力！
 - 给我一个star，我也给你一个star
 - 给我一个fork，我也给你一个fork
