@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2X48 | 比“羊了个羊”还要难的游戏</title>
+    <link rel="stylesheet" href="2088.css">
+</head>
+<body>
+<p>SCORE:<span id="score">0</span></p>
+<div id="gridPanel">
+    <div id="c00" class="cell"></div>
+    <div id="c01" class="cell"></div>
+    <div id="c02" class="cell"></div>
+    <div id="c03" class="cell"></div>
+    <div id="c04" class="cell"></div>
+    <div id="c05" class="cell"></div>
+    <div id="c06" class="cell"></div>
+    <div id="c07" class="cell"></div>
+    <div id="c08" class="cell"></div>
+    <div id="c09" class="cell"></div>
+
+    <div id="c10" class="cell"></div>
+    <div id="c11" class="cell"></div>
+    <div id="c12" class="cell"></div>
+    <div id="c13" class="cell"></div>
+    <div id="c14" class="cell"></div>
+    <div id="c15" class="cell"></div>
+    <div id="c16" class="cell"></div>
+    <div id="c17" class="cell"></div>
+    <div id="c18" class="cell"></div>
+    <div id="c19" class="cell"></div>
+
+    <div id="c20" class="cell"></div>
+    <div id="c21" class="cell"></div>
+    <div id="c22" class="cell"></div>
+    <div id="c23" class="cell"></div>
+    <div id="c24" class="cell"></div>
+    <div id="c25" class="cell"></div>
+    <div id="c26" class="cell"></div>
+    <div id="c27" class="cell"></div>
+    <div id="c28" class="cell"></div>
+    <div id="c29" class="cell"></div>
+
+    <div id="c30" class="cell"></div>
+    <div id="c31" class="cell"></div>
+    <div id="c32" class="cell"></div>
+    <div id="c33" class="cell"></div>
+    <div id="c34" class="cell"></div>
+    <div id="c35" class="cell"></div>
+    <div id="c36" class="cell"></div>
+    <div id="c37" class="cell"></div>
+    <div id="c38" class="cell"></div>
+    <div id="c39" class="cell"></div>
+
+    <div id="c40" class="cell"></div>
+    <div id="c41" class="cell"></div>
+    <div id="c42" class="cell"></div>
+    <div id="c43" class="cell"></div>
+    <div id="c44" class="cell"></div>
+    <div id="c45" class="cell"></div>
+    <div id="c46" class="cell"></div>
+    <div id="c47" class="cell"></div>
+    <div id="c48" class="cell"></div>
+    <div id="c49" class="cell"></div>
+
+    <div id="c50" class="cell"></div>
+    <div id="c51" class="cell"></div>
+    <div id="c52" class="cell"></div>
+    <div id="c53" class="cell"></div>
+    <div id="c54" class="cell"></div>
+    <div id="c55" class="cell"></div>
+    <div id="c56" class="cell"></div>
+    <div id="c57" class="cell"></div>
+    <div id="c58" class="cell"></div>
+    <div id="c59" class="cell"></div>
+
+    <div id="c60" class="cell"></div>
+    <div id="c61" class="cell"></div>
+    <div id="c62" class="cell"></div>
+    <div id="c63" class="cell"></div>
+    <div id="c64" class="cell"></div>
+    <div id="c65" class="cell"></div>
+    <div id="c66" class="cell"></div>
+    <div id="c67" class="cell"></div>
+    <div id="c68" class="cell"></div>
+    <div id="c69" class="cell"></div>
+
+    <div id="c70" class="cell"></div>
+    <div id="c71" class="cell"></div>
+    <div id="c72" class="cell"></div>
+    <div id="c73" class="cell"></div>
+    <div id="c74" class="cell"></div>
+    <div id="c75" class="cell"></div>
+    <div id="c76" class="cell"></div>
+    <div id="c77" class="cell"></div>
+    <div id="c78" class="cell"></div>
+    <div id="c79" class="cell"></div>
+
+    <div id="c80" class="cell"></div>
+    <div id="c81" class="cell"></div>
+    <div id="c82" class="cell"></div>
+    <div id="c83" class="cell"></div>
+    <div id="c84" class="cell"></div>
+    <div id="c85" class="cell"></div>
+    <div id="c86" class="cell"></div>
+    <div id="c87" class="cell"></div>
+    <div id="c88" class="cell"></div>
+    <div id="c89" class="cell"></div>
+
+    <div id="c90" class="cell"></div>
+    <div id="c91" class="cell"></div>
+    <div id="c92" class="cell"></div>
+    <div id="c93" class="cell"></div>
+    <div id="c94" class="cell"></div>
+    <div id="c95" class="cell"></div>
+    <div id="c96" class="cell"></div>
+    <div id="c97" class="cell"></div>
+    <div id="c98" class="cell"></div>
+    <div id="c99" class="cell"></div>
+
+</div>
+<p>
+    使用“↑” “↓” “←” “→”控制游戏<br/>
+    按下“Ctrl+R”重新开局或解除画面空白<br/>
+    积分规则: 原得分+每次合并所有数的和
+</p>
+<div id="gameOver">
+    <p>
+        GAME OVER!<br>
+        SCORE:<span id="final">0</span><br>
+        <a class="btn" href="javascript:game.start();">TRY AGAIN!</a>
+    </p>
+</div>
+    <script src="2048.js"></script>
+</body>
+</html>

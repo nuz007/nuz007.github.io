@@ -1,0 +1,113 @@
+body{margin: 0px;background-color: #eeeedd;}
+
+.toptitle{
+    float: left;
+    line-height: 48px;
+    color: #ccffff;
+    font-size: 16pt;
+    margin-left: 40px;
+}
+
+.topmenu{
+    float: left;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+/* 下拉按钮 */
+.topbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+    user-select: none;
+    opacity: 0.75;
+}
+
+/* 导航栏内的链接 */
+.topbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* 下拉容器 */
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+/* 下拉按钮 */
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit; /* 对手机垂直对齐很重要 */
+    margin: 0; /* 对手机垂直对齐很重要 */
+}
+
+/* 为悬停时的导航栏链接添加红色背景颜色 */
+.topbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #555;
+    border-radius: 10px;
+    padding: 7px 8px;
+    margin: 7px 8px;
+}
+
+/* 下拉内容（默认隐藏）*/
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #222;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px #999988;
+    border-radius: 0px 0px 10px 10px;
+}
+
+/* 下拉列表中的链接 */
+.dropdown-content a {
+    float: none;
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* 为悬停时的下拉链接添加灰色背景颜色 */
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+/* 悬停时显示下拉菜单 */
+.dropdown:hover .dropdown-content {
+    display: block;
+    z-index: 1;
+}
+
+.header{
+    text-align: center;
+    height: 360px;
+    line-height: 360px;
+    font-size: 96px;
+    background:url("back.jpg");
+    background-size: 100% 100%;
+    color: #555522;
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+    width: 100vw;
+}
+.header span{
+    opacity: 0.9;
+    -webkit-text-stroke: 2px #FFD770;
+    user-select: none;
+}

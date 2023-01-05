@@ -1,0 +1,95 @@
+#gridPanel{
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    background: #ccefff;
+    border-radius: 4px;
+}
+.cell{
+    width: 36px;
+    height: 36px;
+    border-radius: 2px;
+    background:#dddfff;
+    position: absolute;
+    font-size: 27px;
+    text-align: center;
+    color: #fff;
+    line-height: 40px;
+}
+[id^="c0"]{top:4px}
+[id^="c1"]{top:43px}
+[id^="c2"]{top:82px}
+[id^="c3"]{top:121px}
+[id^="c4"]{top:160px}
+[id^="c5"]{top:199px}
+[id^="c6"]{top:238px}
+[id^="c7"]{top:252px}
+[id^="c8"]{top:316px}
+[id^="c9"]{top:355px}
+
+[id$="0"]{left:4px}
+[id$="1"]{left:43px}
+[id$="2"]{left:82px}
+[id$="3"]{left:121px}
+[id$="4"]{left:160px}
+[id$="5"]{left:199px}
+[id$="6"]{left:238px}
+[id$="7"]{left:252px}
+[id$="8"]{left:316px}
+[id$="9"]{left:355px}
+.n1{background-color:#00007f}
+.n2{background-color:#0000af}
+.n4{background-color:#003faf}
+.n8{background-color:#006faf}
+.n16{background-color:#008fff}
+.n32{background-color:#00afff}
+.n64{background-color:#00cfff}
+.n128{background-color:#00efff}
+.n256{background-color:#00ffff}
+.n512{background-color:#a0dfcf}
+.n1024{background-color:#80efaf}
+.n2048{background-color:#b0efcf}
+.n4096{background-color:#b0f0cf}
+.n8192{background-color:#ffc0ff}
+.n128,.n256,.n512,.n1024,.n2048,.n4096,.n8192{color:#776e65}
+.n1024,.n2048,.n4096,.n8192{font-size:40px}
+.n128,.n256,.n512{font-size: 48px;}
+.n-1,.n-2,.n-4,.n-8,.n-16,.n-32,.n-64,.n-128,.n-256,.n-512,.n-1024,.n-2048,.n-4096,.n-8192{background-color: #000000;color: #a0cfff;font-size: 32px;}
+
+p{
+    width: 480px;margin: 0 auto;
+    font-size: 40px; font-family: Arial;
+    font-weight: bold;
+    padding-top: 15px;
+}
+#gameOver{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(55,55,55,.5);
+}
+#gameOver>p{
+    width: 300px;
+    height: 200px;
+    background: #FFFFFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top:-100px;
+    margin-left: -150px;
+    text-align: center;
+    line-height: 1.5em;
+    border-radius: 10px;
+    border:1px solid #edcf72;
+}
+#gameOver .btn{
+    padding: 10px;
+    color: #FFFFFF;
+    background: #9f8d77;
+    border-radius: 6px;
+    text-decoration: none;
+}

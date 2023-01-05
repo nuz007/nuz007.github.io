@@ -1,0 +1,45 @@
+<html>     
+<head>     
+<title>假装中毒-按F11全屏</title>     
+<script>     
+var timer = 100;     
+var randDiv = new Array(300);     
+window.onload = function()     
+{     
+     for(var i = 0; i < randDiv.length; i++)     
+     {     
+             randDiv[i] = document.createElement("DIV");     
+             randDiv[i].style.cssText = "filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);";     
+             randDiv[i].style.position = "absolute";     
+             randDiv[i].style.background = GetRandomColor();     
+             document.body.appendChild(randDiv[i]);     
+     }     
+     Fun();     
+}     
+function Fun()     
+{     
+     for(var i = 0; i < randDiv.length; i++)     
+     {     
+             randDiv[i].style.top = Math.floor(Math.random() * window.screen.height);
+             randDiv[i].style.left = 0;//Math.floor(Math.random() * window.screen.width)     
+             randDiv[i].style.width = window.screen.width;//Math.floor(Math.random() * 100)
+             randDiv[i].style.height = Math.floor(Math.random() * 30); 
+             randDiv[i].style.background = GetRandomColor();     
+     }     
+     setTimeout("Fun()", timer);     
+}     
+function GetRandomColor()     
+{     
+     var r = Math.floor(Math.random() * 255).toString(16);     
+     var g = Math.floor(Math.random() * 255).toString(16);     
+     var b = Math.floor(Math.random() * 255).toString(16);     
+     r = r.length == 1 ? "0" + r : r;     
+     g = g.length == 1 ? "0" + g : g;     
+     b = b.length == 1 ? "0" + b : b;     
+     return "#" + r + g + b;     
+}     
+</script>     
+</head>     
+<body>     
+</body>     
+</html>
