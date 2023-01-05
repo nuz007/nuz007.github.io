@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>吃掉小猫猫</title>
+    <meta itemprop="name" content="吃掉小猫猫！" />
+    <meta itemprop="description" content="新概念音游" />
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, width=device-width,target-densitydpi=device-dpi" />
+    <link rel="icon" href="https://eafoo.github.io/eatcat/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="https://eafoo.github.io/eatcat/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="./static/index.css" rel="stylesheet" type="text/css">
+    <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script src="https://passport.cnblogs.com/scripts/jsencrypt.min.js"></script>
+    <script src="./static/index.js"></script>
+</head>
+
+<body onLoad="init()" oncontextmenu=self.event.returnValue=false>
+    <div id="GameScoreLayer" class="BBOX SHADE bgc1" style="display:none;">
+        <div style="padding:5%;margin-top: 200px;background-color: rgba(125, 181, 216, 0.8);">
+            <div id="GameScoreLayer-text" style="font-size:0.6em;"></div>
+            <div id="GameScoreLayer-score" style="font-size:0.6em; margin:10px 0;">得分</div>
+            <div id="GameScoreLayer-bast" style="font-size:0.6em;">最佳</div>
+            <div id="now" style="font-size:0.6em;">键型</div>
+            <div id="nosw" style="font-size:0.6em;">电脑端玩家按下R键可一键重开哦~</div>
+            <button type="button" class="btn btn-secondary btn-lg" onclick="replayBtn()">重来</button>
+            <button type="button" class="btn btn-secondary btn-lg"
+                onclick="hideGameScoreLayer();showWelcomeLayer();gameRestart()">返回主页</button>
+            <button type="button" class="btn btn-secondary btn-lg"
+                onclick="window.location.href='https://github.com/8bd8/8bd8.github.io/game/bw2'">源代码(改版后)</button>
+        </div>
+    </div>
+    </div>
+    <div id="welcome" class="SHADE BOX-M">
+        <div class="welcome-bg FILL"></div>
+        <div class="FILL BOX-M" style="position:absolute;top:0;left:0;right:0;bottom:0;z-index:5;">
+            <div style="margin:0 8% 0 9%;">
+                <div style="font-size:1.2em; color:#FEF002;" id="tt">吃掉小猫猫（支持高度自定义~）</div><br />
+                <div style="font-size: 1.0em; color:rgb(45, 255, 4); line-height:1.5em;" id="tttt">
+                    更新公告：现在可以设置垂直判定啦！<br />
+                </div>
+                <div style="font-size: 1.0em; color:#fff; line-height:1.5em;" id="ttt">
+                    从最底下小猫猫开始<br />
+                    看看您能吃多少猫猫~<br />
+                    注：设置里有很多好东西哟！<br />
+                    电脑玩家在默认设置下 <br />
+                    键盘上的DFJK键<br />
+                    可分别控制四个轨道哦！<br />
+                </div>
+                <br />
+                <div id="btn_group" style="display: block;">
+                    <button type="button" id="ready-btn" class="btn btn-primary loading btn-lg">点击开始</button>
+                    <button type="button" class="btn btn-secondary btn-lg" onclick="show_setting()">游戏设置</button>
+                    <br /><br />
+                    <button type="button" class="btn btn-secondary btn-lg"
+                        onclick="foreach()">若出现了bug点击此按钮后刷新界面</button>
+                    <br /><br />
+                </div>
+
+                <div id="btn_group2" style="display: block;">
+                    <h2 style="font-size:1.0em; color:#fff; line-height:1.5em;">一键设置特殊键型（若按键全部消失请刷新界面）</h2>
+                    <button type="button" class="btn btn-secondary btn-lg" onclick="autoset('!')">纯随机</button>
+                    <button type="button" class="btn btn-secondary btn-lg" onclick="autoset('@')">无纵连的随机</button>
+                    <button type="button" class="btn btn-secondary btn-lg" onclick="autoset('@#')">短纵</button>
+                    <button type="button" class="btn btn-secondary btn-lg" onclick="autoset('2')">全纵连</button>
+                    <br><br>
+                    <button type="button" class="btn btn-secondary btn-lg" onclick="autoset('32')">交互</button>
+                    <button type="button" class="btn btn-secondary btn-lg" onclick="stair()">楼梯</button>
+                    <button type="button" class="btn btn-secondary btn-lg" onclick="autoset('@##')">三纵</button>
+                </div>
+                <div id="setting1" style="display: none;">
+                    <h3 style="font-size:1.0em; color:#fff; line-height:1.3em;">
+                        请在此处输入您需要的键数（这边建议是2~8哦）
+                    </h3>
+                    <div class="input-group mb-3">
+                        <input align="center" type="text" id="k" class="inputtxt" maxlength=10>
+                    </div>
+                    <h3 style="font-size:1.0em; color:#fff; line-height:1.3em;">
+                        请在此处输入与您需要的键数数量相等的英文字母 <br />
+                        以绑定键盘上对应的按键哦（不区分大小写,手机端玩家请忽略按键设置）！<br />
+                        4K下电脑默认为DFJK哦！其他键数请自行设置！<br />
+                    </h3>
+                    <div class="input-group mb-3">
+                        <input type="text" id="keyboard" class="inputtxt" maxlength=99999>
+                    </div>
+                    <h3 style="font-size:1.0em; color:#fff; line-height:1.3em;">
+                        请在此处输入您想要设置的时间限制哦~ （单位：秒） <br />
+                    </h3>
+                    <div class="input-group mb-3">
+                        <input type="text" id="timeinput" class="inputtxt" maxlength=4>
+                    </div>
+                    <h3 style="font-size:1.0em; color:#fff; line-height:1.3em;">
+                        请在此处输入您想要设置的键型哦~ <a href="https://docs.qq.com/doc/DYVNMQ0pEWm12VGpv/" target="_blank">
+                            <br>（注意：键型设置有改动，详细说明请点击这里）</a> <br />
+                    </h3>
+                    <div class="input-group mb-3">
+                        <input type="text" id="note" class="inputtxt" maxlength=99999>
+                    </div>
+                    <button type="button" class="btn btn-secondary btn-lg"
+                        onclick="show_btn(1);save_cookie();">完成</button>
+                    <button type="button" class="btn btn-secondary btn-lg" onclick="nxtpage(1);">下一页</button>
+                </div>
+                <div id="setting2" style="display: none;">
+                    <h3 style="font-size:1.0em; color:#fff; line-height:1.3em;">
+                        关闭音效
+                    </h3>
+                    <input type="checkbox" class="rradio" id="close">
+                    <br>
+                    <h3 style="font-size:1.0em; color:#fff; line-height:1.3em;">
+                        隐藏结算后显示的评语
+                    </h3>
+                    <input type="checkbox" id="hide" class="rradio">
+                    <br>
+                    <h3 style="font-size:1.0em; color:#fff; line-height:1.3em;">
+                        开启垂直判定
+                    </h3>
+                    <input type="checkbox" id="fsj" class="rradio">
+                    <br>
+                    <h3 style="font-size:1.0em; color:#fff; line-height:1.3em;">
+                        自定义按键显示的图片（可以是动图哦~）
+                    </h3>
+                    <div class="u-file-c u-file-btn">
+                        <input id="upload-input" type="file" accept="image/gif, image/jpg, image/png, image/webp"
+                            onchange="showImg(this)" />
+                    </div>
+                    <br>
+                    <br>
+                    <button type="button" class="btn btn-secondary btn-lg" onclick="lstpage(2);">上一页</button>
+                    <button type="button" class="btn btn-secondary btn-lg"
+                        onclick="show_btn(2);save_cookie();">完成</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
